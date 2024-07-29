@@ -1,5 +1,7 @@
 # Home Cooking Helper
 
+![Homepage jepg](https://github.com/user-attachments/assets/5287105b-1b64-4bfd-a44b-97717ae5a652)
+
 ## Overview
 This web application will serve as a comprehensive platform for home cooking, offering users guidance on everything they need to know to prepare food in the comfort of their own homes. The application enables users to input the ingredients they have in their kitchen and receive recommendations for recipes that can be made with them. A multitude of customizable filters allows users to refine their search based on dietary restrictions, cuisine type, nutritional composition, flavor profile, dish complexity, and whether additional ingredients can be added.
 
