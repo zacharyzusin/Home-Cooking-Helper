@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Info</title>
+
+<style>
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f1e7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #a7d129;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    color: #fff;
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+#searchForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#searchForm input[type='text'] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+#searchForm button {
+    padding: 10px 20px;
+    background-color: #eb6e4b;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#searchForm button:hover {
+    background-color: #cf5c3f;
+}
+
+
+nav {
+    background-color: #444;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+nav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+</style>
+</head>
+<body>
+<header>
+<div>
+    <nav>
+        <a href="/">Search</a>
+        <a href="/account-settings">Account</a>
+        <a href="/social">Social</a>
+        <a href="/create-recipe">Create Recipe</a>
+    </nav>
+    <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" alt="Home Cooking Logo" style="width: 150px; height: auto; margin: 10px;"></a>
+</div>
+<h1>{{ recipe['recipename'].title() }}</h1>
+<h2>Recipe by: {{ user }}</h2>
+{% if saved %}
+    <form action="/unsave2" method="post">
+        <input type="hidden" name="recipe_id" value="{{ recipe['recipeid'] }}">
+        <button type="submit">Saved</button>
+    </form>
+{% else %}
+    <form action="/save-recipe" method="post">
+        <input type="hidden" name="recipe_id" value="{{ recipe['recipeid'] }}">
+        <button type="submit">Save to My Recipes</button>
+    </form>
+{% endif %}
+
+<form action="/review/{{ recipe['recipeid'] }}" method="post" style="margin-top: 15px;">
+    <button type="submit">Review this Recipe</button>
+</form>
+</header>
+<main>
+    <p><strong>Time:</strong> {{ recipe['time'] }} minutes</p>
+    <p><strong>Complexity:</strong> {{ recipe['complexity'] }}</p>
+    <p><strong>Cuisine Type:</strong> {{ recipe['cuisinetype'] }}</p>
+    
+    {% if drs %}
+    <h4>Dietary Restrictions this Recipe is Compatible with:</h4>
+    <ul>
+        {% for dr in drs %}
+        <li>{{ dr.title()  }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h4>Ingredients</h4>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient.title()  }}</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Nutritional Information</h4>
+    <ul>
+        {% for key, item in nutrients.items() %}
+        <li>{{ key.title()  }}: {{ item }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h4>Flavor Profile</h4>
+    <ul>
+        {% for key, item in flavors.items() %}
+        <li>{{ key.title() }}: {{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Instructions</h3>
+    <ol>
+        {% for instruction in instructions %}
+        <li>{{ instruction }}</li>
+        {% endfor %}
+    </ol>
+
+    
+
+</main>
+</body>
+</html>
