@@ -28,16 +28,16 @@ Users can search recipes using multiple criteria:
 - **Social Feed**: Browse recent community reviews
 
 ### Recipe Collection Interface
-![Recipe Collection](cooking_recipes.png)
+![Recipe Collection](/static/cooking_recipes.png)
 
 ### Create Recipe Form
-![Create Recipe](cooking_create.png)
+![Create Recipe](/static/cooking_create.png)
 
 ### Account Settings Dashboard
-![Account Settings](cooking_account.png)
+![Account Settings](/static/cooking_account.png)
 
 ### Recipe Details View
-![Recipe Details](cooking_recipe.png)
+![Recipe Details](/static/cooking_recipe.png)
 
 ## Tech Stack
 
@@ -63,7 +63,7 @@ The application uses a PostgreSQL database with the following main tables:
 - **Saves**: User's saved recipes
 
 ### Entity Relationship Diagram
-![ER_Diagram](https://github.com/user-attachments/assets/36ee6f38-0e57-421a-b1c2-d7065a710f99)
+![ER_Diagram](/static/https://github.com/user-attachments/assets/36ee6f38-0e57-421a-b1c2-d7065a710f99)
 
 ## Project Structure
 
