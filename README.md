@@ -63,7 +63,7 @@ The application uses a PostgreSQL database with the following main tables:
 - **Saves**: User's saved recipes
 
 ### Entity Relationship Diagram
-![ER_Diagram](/static/https://github.com/user-attachments/assets/36ee6f38-0e57-421a-b1c2-d7065a710f99)
+![ER_Diagram](/static/entity_diagram.png)
 
 ## Project Structure
 
