@@ -41,11 +41,9 @@ Users can search recipes using multiple criteria:
 
 ## Tech Stack
 
-- **Backend**: Python Flask
-- **Database**: PostgreSQL with SQLAlchemy ORM
-- **Frontend**: HTML templates with Jinja2
-- **Session Management**: Flask sessions
-- **Database Connection**: SQLAlchemy with connection pooling
+- **Backend**: Python, Flask
+- **Database**: PostgreSQL, SQLAlchemy
+- **Frontend**: HTML, Jinja2
 
 ## Database Schema
 
