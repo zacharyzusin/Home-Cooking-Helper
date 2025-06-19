@@ -2,7 +2,7 @@
 
 A comprehensive web application for sharing, discovering, and managing recipes. This platform serves as your complete home cooking companion, offering users guidance on everything they need to know to prepare food in the comfort of their own homes. Users can create accounts, share their own recipes, save favorites, write reviews, and discover new recipes through advanced search functionality.
 
-![Homepage](cooking_home.png)
+![Homepage](/static/cooking_home.png)
 
 ## Features
 
